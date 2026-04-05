@@ -4,12 +4,15 @@ server:
 spring:
   application:
     name: restaurant-service
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/restaurant_db
 
 #Eureka configuration
-  eureka:
-    client:
-      service-url:
-        defaultZone: http://localhost:8761/eureka/
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
 
 
 #Log Pattern
