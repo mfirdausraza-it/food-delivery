@@ -4,13 +4,31 @@ server:
 spring:
   application:
     name: config-server
-  profiles:
-    active: native
+
+#  if you fetching configuration file from class path
+#  profile  should be active as native and search location should be classpath:/config/
+
+#  profiles:
+#    active: native
+
+#  cloud:
+#    config:
+#      server:
+#        native:
+#          search-locations: classpath:/config/
+
+
+
+# if you want to fetch configuration file from git repository
   cloud:
     config:
-      server:
-        native:
-          search-locations: classpath:/config/
+        server:
+          git:
+            uri: https://github.com/mfirdausraza-it/food-delivery-config-server.git
+#            username: your-username
+#            password: your-password
+            # Optional: Specify the branch to use (default is 'master')
+            default-label: main #Branch configuration file should be read from
 
 eureka:
   client:
