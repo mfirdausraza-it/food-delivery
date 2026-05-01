@@ -1,0 +1,4 @@
+# This is the prod config for order-service
+my:
+  custom:
+    message: "Hello from Config Server (PROD Profile)!"
